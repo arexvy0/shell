@@ -1,10 +1,11 @@
 Write-Host "Bitte wählen Sie eine der folgenden Optionen, um ein Programm herunterzuladen:"
-Write-Host "1) RegestryChangesView"
+Write-Host "1) RegistryChangesView"
 Write-Host "2) USBDriveLog"
 Write-Host "3) ShellExView"
 Write-Host "4) JumpList"
 Write-Host "5) USBForensicLookup"
 Write-Host "6) DNSDataView"
+Write-Host "q) Beenden"
 Write-Host ""
 
 $urls = @{
@@ -22,15 +23,28 @@ if (-not (Test-Path -Path $downloadFolder)) {
     New-Item -ItemType Directory -Path $downloadFolder | Out-Null
 }
 
-$selection = Read-Host "Geben Sie die Zahl der Option ein, die Sie herunterladen möchten"
+do {
+    $selection = Read-Host "Geben Sie die Zahl der Option ein, die Sie herunterladen möchten (oder 'q' zum Beenden)"
 
-if ($urls.ContainsKey($selection)) {
-    $url = $urls[$selection]
-    $fileName = Split-Path $url -Leaf
-    $outputPath = Join-Path $downloadFolder $fileName
-    Write-Host "Herunterladen von $fileName..."
-    Invoke-WebRequest -Uri $url -OutFile $outputPath
-    Write-Host "Download abgeschlossen: $outputPath"
-} else {
-    Write-Host "Ungültige Auswahl. Bitte erneut versuchen."
-}
+    if ($selection -eq 'q') {
+        Write-Host "Programm wird beendet."
+        break
+    }
+
+    if ($urls.ContainsKey($selection)) {
+        $url = $urls[$selection]
+        $fileName = Split-Path $url -Leaf
+        $outputPath = Join-Path $downloadFolder $fileName
+        Write-Host "Herunterladen von $fileName..."
+        
+        try {
+            Invoke-WebRequest -Uri $url -OutFile $outputPath -ErrorAction Stop
+            Write-Host "Download abgeschlossen: $outputPath"
+        } catch {
+            Write-Host "Fehler beim Herunterladen von $fileName. Überprüfen Sie die URL oder Ihre Internetverbindung."
+        }
+    } else {
+        Write-Host "Ungültige Auswahl. Bitte erneut versuchen."
+    }
+
+} while ($true)
