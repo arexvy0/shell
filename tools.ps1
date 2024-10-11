@@ -11,6 +11,9 @@ $urls = @{
     "4" = "https://www.nirsoft.net/utils/jumplistsview.zip"
     "5" = "https://e5hforensics.com/wp-content/uploads/2023/03/USB-Forensic-Tracker-v1.1.3.zip"
     "6" = "https://www.nirsoft.net/utils/dnsdataview.zip"
+    "7" = "https://www.nirsoft.net/utils/recentfilesview.zip"
+    "8" = "https://www.nirsoft.net/utils/lastactivityview.zip"
+    "9" = "https://www.nirsoft.net/utils/opensavefilesview-x64.zip"
 }
 
 while ($true) {
@@ -21,6 +24,9 @@ while ($true) {
     Write-Host "4) JumpList"
     Write-Host "5) USBForensicLookup"
     Write-Host "6) DNSDataView"
+    Write-Host "7) RecentFilesView"
+    Write-Host "8) LastActivityView"
+    Write-Host "9) OpenSavedFilesView"
     Write-Host "q) Beenden"
 
     $selection = Read-Host "Ihre Auswahl"
