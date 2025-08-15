@@ -18,7 +18,6 @@ $urls = @{
     "11" = "https://www.nirsoft.net/utils/regscanner-x64.zip"
     "12" = "https://www.nirsoft.net/utils/previousfilesrecovery-x64.zip"
     "13" = "https://github.com/winsiderss/si-builds/releases/download/3.2.25225.2244/systeminformer-3.2.25225.2244-canary-setup.exe"
-    "14" = "https://www.nirsoft.net/utils/winprefetchview-x64.zip"
 }
 
 while ($true) {
@@ -54,5 +53,6 @@ while ($true) {
         Write-Host "Ungültige Auswahl. Bitte erneut versuchen."
     }
 }
+
 
 
