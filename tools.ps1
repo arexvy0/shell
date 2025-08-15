@@ -37,23 +37,47 @@ while ($true) {
     Write-Host "12) PreviousFiles"
     Write-Host "13) System Informer"
     Write-Host "14) WinPrefetchView"
+    Write-Host "15) ALLE Dateien herunterladen"
     Write-Host "q) Beenden"
 
     $selection = Read-Host "Ihre Auswahl"
 
     if ($selection -eq "q") {
         break
-    } elseif ($urls.ContainsKey($selection)) {
+    }
+    elseif ($selection -eq "15") {
+        foreach ($key in $urls.Keys) {
+            $url = $urls[$key]
+            $fileName = Split-Path $url -Leaf
+            $outputPath = Join-Path $downloadFolder $fileName
+            Write-Host "Herunterladen von $fileName..."
+            try {
+                Invoke-WebRequest -Uri $url -OutFile $outputPath -UseBasicParsing
+                Write-Host "Download abgeschlossen: $outputPath"
+            }
+            catch {
+                Write-Host "Fehler beim Herunterladen von $fileName"
+            }
+        }
+    }
+    elseif ($urls.ContainsKey($selection)) {
         $url = $urls[$selection]
         $fileName = Split-Path $url -Leaf
         $outputPath = Join-Path $downloadFolder $fileName
         Write-Host "Herunterladen von $fileName..."
-        Invoke-WebRequest -Uri $url -OutFile $outputPath
-        Write-Host "Download abgeschlossen: $outputPath"
-    } else {
+        try {
+            Invoke-WebRequest -Uri $url -OutFile $outputPath -UseBasicParsing
+            Write-Host "Download abgeschlossen: $outputPath"
+        }
+        catch {
+            Write-Host "Fehler beim Herunterladen von $fileName"
+        }
+    }
+    else {
         Write-Host "Ungültige Auswahl. Bitte erneut versuchen."
     }
 }
+
 
 
 
