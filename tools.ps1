@@ -13,6 +13,11 @@ $urls = @{
     "6" = "https://www.nirsoft.net/utils/recentfilesview.zip"
     "7" = "https://www.nirsoft.net/utils/lastactivityview.zip"
     "8" = "https://www.nirsoft.net/utils/opensavefilesview-x64.zip"
+    "9" = "https://www.nirsoft.net/utils/simpleprogramdebugger-x64.zip"
+    "10" = "https://www.nirsoft.net/utils/resourcesextract-x64.zip"
+    "11" = "https://www.nirsoft.net/utils/regscanner-x64.zip"
+    "12" = "https://www.nirsoft.net/utils/previousfilesrecovery-x64.zip"
+    "13" = "https://github.com/winsiderss/si-builds/releases/download/3.2.25225.2244/systeminformer-3.2.25225.2244-canary-setup.exe"
 }
 
 while ($true) {
@@ -25,6 +30,11 @@ while ($true) {
     Write-Host "6) RecentFilesView"
     Write-Host "7) LastActivityView"
     Write-Host "8) OpenSavedFilesView"
+    Write-Host "9) SimpleProgramDebugger"
+    Write-Host "10) ResourceExtractor"
+    Write-Host "11) RegScanner"
+    Write-Host "12) PreviousFiles"
+    Write-Host "13) System Informer"
     Write-Host "q) Beenden"
 
     $selection = Read-Host "Ihre Auswahl"
@@ -42,3 +52,4 @@ while ($true) {
         Write-Host "Ungültige Auswahl. Bitte erneut versuchen."
     }
 }
+
