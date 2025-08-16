@@ -1,5 +1,8 @@
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
-$downloadFolder = "$env:USERPROFILE\Desktop\Pc Check"
+
+# Ordner "Pc Check" auf dem Desktop anlegen
+$desktop = [Environment]::GetFolderPath("Desktop")
+$downloadFolder = "$desktop\Pc Check"
 if (-not (Test-Path -Path $downloadFolder)) {
     New-Item -ItemType Directory -Path $downloadFolder | Out-Null
 }
@@ -52,7 +55,7 @@ while ($true) {
             $outputPath = Join-Path $downloadFolder $fileName
             Write-Host "Herunterladen von $fileName..."
             try {
-                Invoke-WebRequest -Uri $url -OutFile $outputPath -UseBasicParsing
+                Invoke-WebRequest -Uri $url -OutFile $outputPath
                 Write-Host "Download abgeschlossen: $outputPath"
             }
             catch {
@@ -66,7 +69,7 @@ while ($true) {
         $outputPath = Join-Path $downloadFolder $fileName
         Write-Host "Herunterladen von $fileName..."
         try {
-            Invoke-WebRequest -Uri $url -OutFile $outputPath -UseBasicParsing
+            Invoke-WebRequest -Uri $url -OutFile $outputPath
             Write-Host "Download abgeschlossen: $outputPath"
         }
         catch {
@@ -77,6 +80,8 @@ while ($true) {
         Write-Host "Ungültige Auswahl. Bitte erneut versuchen."
     }
 }
+
+
 
 
 
