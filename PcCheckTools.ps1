@@ -11,10 +11,7 @@ $downloads = @(
     @{ Url = "https://dl.echo.ac/tool/journal"; OpenBrowser = $true },   # wird im Browser geöffnet
     @{ Url = "https://dl.echo.ac/tool/bam"; OpenBrowser = $true },       # wird im Browser geöffnet
     @{ Url = "https://download.ericzimmermanstools.com/net6/AmcacheParser.zip" },
-    @{ Url = "https://download.ericzimmermanstools.com/net9/RegistryExplorer.zip" },
-    @{ Url = "https://download.ericzimmermanstools.com/net9/TimelineExplorer.zip" },
     @{ Url = "https://accessdata-ftk-imager.software.informer.com/download/?ca81189-3.1.2&t=1755601620"; File = "FTK-Imager-Setup.exe" },
-    @{ Url = "https://github.com/nay-cat/dpsanalyzer/releases/download/1.3/dpsanalyzer.exe" },
     @{ Url = "https://www.voidtools.com/Everything-1.4.1.1028.x64-Setup.exe" },
     @{ Url = "https://github.com/Zack-src/Service-Execution/releases/download/1.0/Service-Execution.exe" }
 )
