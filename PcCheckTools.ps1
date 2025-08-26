@@ -13,7 +13,14 @@ $downloads = @(
     @{ Url = "https://download.ericzimmermanstools.com/net6/AmcacheParser.zip" },
     @{ Url = "https://accessdata-ftk-imager.software.informer.com/download/?ca81189-3.1.2&t=1755601620"; File = "FTK-Imager-Setup.exe" },
     @{ Url = "https://www.voidtools.com/Everything-1.4.1.1028.x64-Setup.exe" },
-    @{ Url = "https://github.com/Zack-src/Service-Execution/releases/download/1.0/Service-Execution.exe" }
+    @{ Url = "https://github.com/Zack-src/Service-Execution/releases/download/1.0/Service-Execution.exe" },
+    @{ Url = "https://www.nirsoft.net/utils/registrychangesview-x64.zip" },
+    @{ Url = "https://www.nirsoft.net/utils/regscanner-x64.zip" },
+    @{ Url = "https://www.nirsoft.net/utils/browsinghistoryview-x64.zip" },
+    @{ Url = "https://www.nirsoft.net/utils/resourcesextract-x64.zip" },
+    @{ Url = "https://www.nirsoft.net/utils/usbdrivelog.zip" },
+    @{ Url = "https://www.nirsoft.net/utils/previousfilesrecovery-x64.zip" },
+    @{ Url = "https://www.nirsoft.net/utils/shellbagsview.zip" }
 )
 
 Write-Host "Möchten Sie alle PC-Check-Tools herunterladen?"
